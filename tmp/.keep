@@ -1,0 +1,12 @@
+#logs
+
+:javascript
+  var source = new EventSource('/subscribe')
+
+  var logData = (data) {
+    log.innerHTML += '\n' + data
+  }
+
+  source.addEventListener('message', function(event) {
+    logData(event.data)
+  })
