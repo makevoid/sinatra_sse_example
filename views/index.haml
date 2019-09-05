@@ -1,12 +1,12 @@
 #log
 
 :javascript
-  var source = new EventSource('/subscribe')
+  const source = new EventSource('/subscribe')
 
-  var logData = function(data) {
+  const logData = function(data) {
     log.innerText += '\n' + data
   }
 
-  source.addEventListener('message', function(event) {
+  source.addEventListener('message', (event) => {
     logData(event.data)
   }, false)
